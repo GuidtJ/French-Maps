@@ -1,0 +1,72 @@
+.map__image{
+    width: 50%;
+    float: left;
+}
+.map__image path{
+    fill: #a4ced2;
+    stroke: black;
+    stroke-width: 1px;
+    transition: fill 0.1s;
+}
+.map__image path:nth-child(1):hover{
+    fill: #3538d2;
+   
+}
+.map__image path:nth-child(2):hover{
+    fill: #47d235;
+   
+}
+.map__image path:nth-child(3):hover{
+    fill: #d26f35;
+   
+}
+.map__image path:nth-child(4):hover{
+    fill: #b36ece;
+   
+}
+.map__image path:nth-child(5):hover{
+    fill: #5e9292;
+   
+}
+.map__image path:nth-child(6):hover{
+    fill: #bbd235;
+   
+}
+.map__image path:nth-child(7):hover{
+    fill: #614b56;
+   
+}
+.map__image path:nth-child(8):hover{
+    fill: #53310a;
+   
+}
+.map__image path:nth-child(9):hover{
+    fill: #647074;
+   
+}
+.map__image path:nth-child(10):hover{
+    fill: #bfb7cc;
+   
+}
+.map__image path:nth-child(11):hover{
+    fill: #192b16;
+   
+}
+.map__image path:nth-child(12):hover{
+    fill: #a192e7;
+   
+}
+.map__image path:nth-child(13):hover{
+    fill: #550e49;
+   
+}
+
+.map__list{
+    float: right;
+    width: 50%;
+}
+.map__list a{
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.1s;
+}
