@@ -1,27 +1,63 @@
-// // Obtenir la référence de l'image SVG et la div pour afficher le texte
+// const grandEst = document.getElementById("region-A");
+// const infoGrandEst = document.querySelector(".infoGrandEst");
+// const aquitaine = document.getElementById("region-B");
+// const infoAquitaine = document.querySelector(".infoAquitaine");
+// const auvergne = document.getElementById("region-C");
+// const infoAuvergne = document.querySelector(".infoAuvergne-Rhône-Alpes");
 
-// const monImage = document.getElementById("mon-image");
-// const textDisplay = document.querySelector(".text-display");
+// grandEst.addEventListener("click", () => {
+//    infoAquitaine.innerHTML = '';
+//    infoAuvergne.innerHTML = '';
+//    infoGrandEst.innerHTML = "Région : Grand-Est";
 
-// // Ajouter un écouteur d'événement pour le clic sur l'image
-// monImage.addEventListener("click", () => {
-//   // Modifier le contenu de la div d'affichage de texte
-//   textDisplay.textContent = "Vous avez cliqué sur l'image !";
 // });
 
-const grandEst = document.getElementById("region-A");
-const infoGrandEst = document.querySelector(".infoGrandEst");
-const aquitaine = document.getElementById("region-B");
-const infoAquitaine = document.querySelector(".infoAquitaine");
+// aquitaine.addEventListener("click", () => {
+//     infoAuvergne.innerHTML = '';
+//     infoGrandEst.innerHTML = '';  
+//     infoAquitaine.innerHTML = "Région : Aquitaine";
+// });
 
-grandEst.addEventListener("click", () => {
-  infoAquitaine.innerHTML = '';
-  infoGrandEst.innerHTML = "Région : Grand-Est<br> Population : 5 562 651 hab. (2020)<br>Densité: 97 hab./km²<br>Superficie : 57 441 km2";
+// auvergne.addEventListener("click", () =>{
+//     infoAquitaine.innerHTML = '';
+//     infoGrandEst.innerHTML = '';
+//     infoAuvergne.innerHTML = "Région : Auvergne";
 
-});
-
-aquitaine.addEventListener("click", () => {
-    infoGrandEst.innerHTML = '';  
-    infoAquitaine.innerHTML = "Alllooooo !!!!!!!!!!!";
-});
+// });
+// const regionName = {
+//   grandEst: {
+//     name: "Grand-Est",
     
+//   },
+//   aquitaine: {
+//     name: "Aquitaine",
+    
+//   },
+//   auvergne: {
+//     name: "Auvergne",
+    
+//   }
+// };
+
+
+
+const regions = document.querySelectorAll("path");
+// const gameMap = document.getElementById('gameMap');
+const infoRegion = document.querySelector('.infoRegion');
+let region = [];
+// const randomIndex = Math.floor(Math.random() * regions.length);
+// const randomRegion = regions [randomIndex];
+
+// console.log(randomIndex);
+// console.log(randomRegion);
+
+
+     regions.foreach(region => {
+         region.addEventListener("click",() => {
+            
+             let title = region.getAttribute('title');
+             infoRegion.innerHTML = title;
+            
+         });
+     });
+console.table(region);
