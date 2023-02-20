@@ -41,10 +41,10 @@
 
 
 
-const regions = document.querySelectorAll("path");
+const regions = document.querySelectorAll('path');
 // const gameMap = document.getElementById('gameMap');
-const infoRegion = document.querySelector('.infoRegion');
-let region = [];
+// const infoRegion = document.querySelector('.infoRegion');
+let regionsample = []
 // const randomIndex = Math.floor(Math.random() * regions.length);
 // const randomRegion = regions [randomIndex];
 
@@ -52,12 +52,13 @@ let region = [];
 // console.log(randomRegion);
 
 
-     regions.foreach(region => {
-         region.addEventListener("click",() => {
+     regions.forEach(region => {
+        regionsample.push(region.getAttribute('title'))
+        //  region.addEventListener("click",() => {
             
-             let title = region.getAttribute('title');
-             infoRegion.innerHTML = title;
+        //      let title = region.getAttribute('title');
+        //      infoRegion.innerHTML = title;
             
-         });
+        //  });
      });
-console.table(region);
+console.table(regionsample);
