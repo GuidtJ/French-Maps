@@ -79,36 +79,15 @@
     fill: #550e49;
    
 }
-
-/* .map__list{
-    float: right;
-    width: 50%;
-}
-.map__list a{
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.1s;
-} */
-
 .map__list a{
     color: inherit;
     
     transition: color 0.1s;
 }
-/* .text-display {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    font-size: 18px;
-  } */
- /* .infoGrandEst, .infoAquitaine, .infoAuvergne-Rhône-Alpes{
-    text-align: center;
-    margin-top: 110px;
-    font-size: 20px;
-} */
+
 .infoRegion{
     text-align: center;
-    margin-top: 80px;
+    margin-top: 30px;
     font-size: 20px;
 }
 .card {
@@ -119,4 +98,14 @@
     background: #e0e0e0;
     box-shadow: 20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
+}
+.results{
+    position: absolute;
+    text-align: center;
+
+}
+.restartBtn{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 40%;
 }

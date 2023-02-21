@@ -5,68 +5,64 @@ const infoRegion = document.querySelector('.infoRegion');
 const restartBtn = document.querySelector('.restartBtn');
 let regionsample = []
 let randomIndex, randomRegion;
+let score = 0;
+let essais = 3;
 
      function getRandomRegion(){
           randomIndex = Math.floor(Math.random() * regions.length);
           randomRegion = regions[randomIndex].getAttribute('title');
-          infoRegion.textContent = 'Cliquez sur la région : ' + randomRegion + '';
+          infoRegion.textContent = 'Trouvez la région : ' + randomRegion + '';
      }
 
      function RegionClick(event){
-
           const selectedRegion = event.target.getAttribute('title');
-     
+          essais--;
           if (selectedRegion === randomRegion){
-               results.textContent = "Bravo vous avez trouver : " + randomRegion + " 😀 ";
-               getRandomRegion();
+               results.textContent = "Bravo vous avez trouver : " + randomRegion + " 😀  ";
+               score++;
+               if(essais > 0){
+                    getRandomRegion();
+               }else{
+                    results.textContent += " Jeux terminer";
+               disableRegionClicks();
+               }
+                
           }
           else {
-               results.textContent = "Dommage ce n'est pas la régions : " + selectedRegion + " 😟 ";
+               results.textContent = "Dommage ce n'est pas la région : " + selectedRegion + " 😟 ";
+               if(essais === 0){
+                    results.textContent += "Insert Coin";
+                    disableRegionClicks();
+               }
           }
      
      }
-
-     // function RegionClick(event){
-
-     //      const selectedRegion = event.target.getAttribute('title');
-
-     //      if (selectedRegion === randomRegion){
-     //           alert('Bravo ' + randomRegion +' 😀 ');
-     //           getRandomRegion();
-     //      }
-     //      else {
-     //           alert('Dommage ' + selectedRegion + ' 😟' );
-     //      }
-
-     // }
-
+     function disableRegionClicks() {
+          regions.forEach(region => {
+               region.removeEventListener('click', RegionClick);
+          });
+     }
+     function restartGame() {
+          score = 0;
+          essais = 3;
+          results.textContent = '';
+          getRandomRegion();
+          regions.forEach(region => {
+               region.addEventListener('click', RegionClick);
+          });
+     }
      
+
      regions.forEach(region => {
           regionsample.push(region.getAttribute('title'));
           region.addEventListener('click', RegionClick);
       });
-      restartBtn.addEventListener('click', getRandomRegion);
-
+     //  restartBtn.addEventListener('click', getRandomRegion);
+      restartBtn.addEventListener('click', restartGame);
+      
 getRandomRegion();
 
-
-
-
-     // regions.forEach(region => {
-     //    regionsample.push(region.getAttribute('title'))
-        
-     //      region.addEventListener("click",() => {
-            
-     //          let title = region.getAttribute('title');
-     //          infoRegion.innerHTML = title;
-            
-     //      });
-
-
-     // });
-     
-     
+  
 console.log(randomIndex);
  console.log(randomRegion);
 console.table(regionsample);
-
